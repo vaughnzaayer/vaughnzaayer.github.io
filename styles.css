@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+.vert_sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #583101;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.vert_sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #D4A276;
+    display: block;
+}
+
+.vert_sidebar a:hover {
+    color: #E7BC91;
+}
+
+.vert_sidebar a.active {
+    color: #FFEDD8;
+}
+
+.main {
+    margin-left: 160px;
+    padding: 10px 10px;
+    width: 160px;
+    height: 100%;
+    color: #001219;
+}
+
+.profile_card {
+    position: fixed;
+    right: 1.5%;
+    background-color: #F3D5B5;
+    height: 490px;
+    width: 256px;
+    display: table;
+    float: none;
+}
+
+.profile_card:before,
+.profile_card:after {
+    content: "";
+    display: table;
+}
+
+.profile_card:after {
+    clear: both;
+}
+
+#profile_image {
+    position: inherit;
+    width: inherit;
+    height: auto;
+}
+
+.content {
+    border-color: #001219;
+    border-style: solid;
+    position: fixed;
+    padding: 10px 10px 10px 10px;
+    width: inherit;
+}
+
+#contact_button {
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    background-color: #D4A276;
+    color: black;
+}
+
+#contact_button:hover {
+    background-color: #BC8A5F;
+}
+
