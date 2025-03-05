@@ -1,12 +1,9 @@
 ---
 layout: default
-title: About
+title: About Me
 ---
-# About page
+# A Little About Me
 
-This page tells you a little bit about me, and confirms 100% that I am following the Jekyll cite tutorial.
+Hi there! My name is Vaughn Zaayer, and I am currently a student at Reed College pursuing a degree in mathematics.
 
-Since this is markdown, bulleted lists should work, right?
-- Maybe
-- I think so
-- Likely, yes
+

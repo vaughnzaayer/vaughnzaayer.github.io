@@ -1,3 +1,43 @@
-.current {
-  color: green
+body {
+  background-color: #FFEDD8;
+}
+
+.vert_navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #583101;
+}
+
+.vert_navbar li {
+  margin: 8px;
+  float: left;
+  font-size: 25px;
+  background-color: #583101;
+}
+
+.vert_navbar li a {
+  display: block;
+  text-decoration: none;
+  color: #D4A276;
+  padding: 8px;
+}
+
+.vert_navbar li a:hover {
+  color: #E7BC91;
+}
+
+.vert_navbar li a.active {
+  color: #FFEDD8;
+}
+
+.contact_card {
+  width: 256px;
+  height: auto;
+  padding: 8px;
 }
