@@ -2,3 +2,21 @@
 layout: default
 title: Projects
 ---
+<h3>
+	Favorite Projects
+</h3>
+<li>
+	{% for project in site.projects %}
+		<a href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+	{% endfor %}
+</li>
+
+<h3>
+	Active Projects
+</h3>
+<h3>
+	Contributions
+</h3>
+<h3>
+	Previous Projects
+</h3>

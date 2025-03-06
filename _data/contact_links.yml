@@ -1,4 +1,9 @@
 - name: Email
   link: google.com
+  icon: assets/icons/mail.png
 - name: github
   link: https://github.com/vaughnzaayer
+  icon: assets/icons/github-mark.png
+- name: LinkedIn
+  link: https://www.linkedin.com/in/vaughn-zaayer-ba0012211/
+  icon: assets/icons/InBug-Black.png

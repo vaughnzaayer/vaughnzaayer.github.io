@@ -2,11 +2,11 @@
 layout: default
 title: Blog
 ---
-<h1>Latest Posts</h1>
+<h2 style="text-align: center;">Latest Posts</h2>
 
 <ul>
 	{% for post in site.posts %}
-		<li>
+		<li id="blog_post_links">
 			<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			{{ post.excerpt }}
 		</li>

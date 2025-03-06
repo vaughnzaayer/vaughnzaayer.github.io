@@ -2,6 +2,8 @@ body {
   background-color: #FFFFFF;
   padding: 0;
   margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #main_content_body {
@@ -9,7 +11,25 @@ body {
   top: 70px;
   margin: 8px;
   padding: 10px;
-  background-color: red;
+/*  background-color: red;*/
+}
+
+#home_main_content {
+  z-index: 0;
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 75%;
+/*  background-color: blue;*/
+}
+
+#contact_space {
+  z-index: -1;
+  position: relative;
+  float: right;
+  height: 100%;
+  width: 25%;
+/*  background-color: green;*/
 }
 
 .vert_navbar {
@@ -48,7 +68,10 @@ body {
 }
 
 .contact_card {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  float: right;
   right: 0;
   list-style-type: none;
   width: 256px;
@@ -58,22 +81,71 @@ body {
   background-color: #bfbfbf;
 }
 
-.contact_card img {
-  width: inherit;
-  height: auto;
-  float: right;
+#profile_pic {
+  border-radius: 10px;
+  width: auto;
+  height: inherit;
+  float: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
   padding: 0px;
   margin: 0;
 }
 
 .contact_card li {
-  margin: 2px;
+  width: 100%;
+  height: auto;
+  position: relative;
   background-color: #322A26;
 }
 
 .contact_card li a {
+  padding: 1px;
+  text-align: center;
   display: block;
   text-decoration: none;
   color: #677DB7;
-  padding: 2px;
+  width: 100%;
+}
+
+.contact_card li a:hover {
+  background-color: #DFDFDF;
+}
+
+.icon {
+  border-style: none;
+  border-width: 0;
+  width: auto;
+  max-height: 20px;
+  float: left;
+  background-color: yellow;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-color: #322A26;
+  color: #565656;
+  font-size: 12px;
+}
+
+#blog_post_links {
+  list-style-type: none;
+  background-color: whitesmoke;
+}
+
+#blog_post_links a {
+  text-decoration: none;
+  padding: 4px;
+  color: black;
+  text-align: center;
+}
+
+#blog_post_links a:hover {
+  color: #BFBFBF;
 }

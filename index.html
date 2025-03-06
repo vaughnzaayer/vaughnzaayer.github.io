@@ -3,14 +3,11 @@ layout: default
 title: Home
 ---
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>{{ page.title }}</title>
-	</head>
-	<body>
-		<h1>Welcome to my website</h1>
+	<div id="home_main_content">
+			{% capture home_content %}{% include home_page_content.md %}{% endcapture %}
+			{{ home_content | markdownify }}
+	</div>
+	<div id="contact_space">
 		{% include contact_card.html %}
-	</body>
-</html>
+	</div>
+	
