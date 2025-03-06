@@ -1,0 +1,10 @@
+<div class="contact_card">
+	<img src= "assets/images/profile_pic.jpeg" alt="A picture of me in the snow.">
+		<li>
+		{% for item in site.data.contact_links %}
+		<a href=" {{ item.link  }}" target="_blank">
+		{{ item.name }}
+		</a>
+		{% endfor %}
+		</li>
+</div>

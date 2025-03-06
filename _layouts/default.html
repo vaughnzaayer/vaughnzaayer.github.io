@@ -4,9 +4,12 @@
 		<meta charset="utf-8">
 		<title>{{ page.title }}</title>
 		<link rel="stylesheet" href="/assets/css/styles.css">
+		{% include navigation.html %}
 	</head>
 	<body>
-		{% include navigation.html %}
-		{{ content }}
+		<div id="main_content_body">
+			{{ content }}
+		</div>
+		
 	</body>
 </html>

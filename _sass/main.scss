@@ -1,8 +1,19 @@
 body {
-  background-color: #FFEDD8;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+}
+
+#main_content_body {
+  position: relative;
+  top: 70px;
+  margin: 8px;
+  padding: 10px;
+  background-color: red;
 }
 
 .vert_navbar {
+  z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
@@ -11,33 +22,58 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #583101;
+  background-color: #000;
 }
 
 .vert_navbar li {
   margin: 8px;
   float: left;
   font-size: 25px;
-  background-color: #583101;
+  padding: 0;
 }
 
 .vert_navbar li a {
   display: block;
   text-decoration: none;
-  color: #D4A276;
+  color: #bfbfbf;
   padding: 8px;
 }
 
 .vert_navbar li a:hover {
-  color: #E7BC91;
+  color: #d9d9d9;
 }
 
 .vert_navbar li a.active {
-  color: #FFEDD8;
+  color: #FDFFFF;
 }
 
 .contact_card {
+  position: relative;
+  right: 0;
+  list-style-type: none;
   width: 256px;
   height: auto;
   padding: 8px;
+  margin: 8px;
+  background-color: #bfbfbf;
+}
+
+.contact_card img {
+  width: inherit;
+  height: auto;
+  float: right;
+  padding: 0px;
+  margin: 0;
+}
+
+.contact_card li {
+  margin: 2px;
+  background-color: #322A26;
+}
+
+.contact_card li a {
+  display: block;
+  text-decoration: none;
+  color: #677DB7;
+  padding: 2px;
 }
