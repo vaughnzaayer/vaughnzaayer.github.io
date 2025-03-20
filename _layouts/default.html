@@ -4,11 +4,17 @@
 		<meta charset="utf-8">
 		<title>{{ page.title }}</title>
 		<link rel="stylesheet" href="/assets/css/styles.css">
-		{% include navigation.html %}
+		
 	</head>
 	<body>
-		<div id="main_content_body">
-			{{ content }}
+		{% include navigation.html %}
+		<div class="main_content_body">
+			<div class="home_main_content">
+				{{ content }}
+			</div>
+			<div class="contact_space">
+				{% include contact_card.html %}
+			</div>
 		</div>
 	</body>
 	{% include footer.html %}

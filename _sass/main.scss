@@ -6,37 +6,35 @@ body {
   width: 100%;
 }
 
-#main_content_body {
-  position: relative;
-  top: 70px;
-  margin: 8px;
-  padding: 10px;
-/*  background-color: red;*/
+.main_content_body {
+  display: flex;
+  margin: 20px;
+  padding-top: 60px;
+  background-color: red;
 }
 
-#home_main_content {
+.home_main_content {
   z-index: 0;
-  position: relative;
-  float: left;
-  height: 100%;
-  width: 75%;
-/*  background-color: blue;*/
+  flex: 3;
+  margin-right: 20px;
+  background-color: blue;
 }
 
-#contact_space {
-  z-index: -1;
-  position: relative;
-  float: right;
-  height: 100%;
-  width: 25%;
-/*  background-color: green;*/
+.contact_space {
+  z-index: 0;
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: green;
 }
 
 .vert_navbar {
   z-index: 1;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  height: 60px;
   float: left;
   list-style-type: none;
   margin: 0;
@@ -107,6 +105,7 @@ body {
   text-decoration: none;
   color: #677DB7;
   width: 100%;
+  margin: 4px;
 }
 
 .contact_card li a:hover {

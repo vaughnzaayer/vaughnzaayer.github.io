@@ -3,11 +3,8 @@ layout: default
 title: Home
 ---
 
-	<div id="home_main_content">
-			{% capture home_content %}{% include home_page_content.md %}{% endcapture %}
-			{{ home_content | markdownify }}
-	</div>
-	<div id="contact_space">
-		{% include contact_card.html %}
-	</div>
+	{% capture home_content %}{% include home_page_content.md %}{% endcapture %}
+	{{ home_content | markdownify }}
+		
+	
 	
