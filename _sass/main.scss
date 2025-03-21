@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFFFF;
+  background-color: white;
   padding: 0;
   margin: 0;
   height: 100%;
@@ -10,14 +10,12 @@ body {
   display: flex;
   margin: 20px;
   padding-top: 60px;
-  background-color: red;
 }
 
 .home_main_content {
   z-index: 0;
   flex: 3;
   margin-right: 20px;
-  background-color: blue;
 }
 
 .contact_space {
@@ -25,7 +23,6 @@ body {
   flex: 1;
   padding: 20px;
   border-radius: 8px;
-  background-color: green;
 }
 
 .vert_navbar {
@@ -40,7 +37,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000;
+  background-color: #49111C;
 }
 
 .vert_navbar li {
@@ -68,32 +65,44 @@ body {
 /*
 
 */
-.contact_card {
-  background-color: yellow;
-  height: 400px;
 
+.contact_card {
+  background-color: #F2F4F3;
+  border-radius: 15px;
+  height: auto;
+  padding: 5px;
 }
 
-.contact_link_box {
-  background-color: purple;
-  display: flex;
+.contact_link_box {  display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
 .contact_link {
-  color: white;
+  color: #F2F4F3;
   margin: 20px;
   text-align: center;
+  text-decoration: none;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: #5E503F;
+}
+
+.contact_link:hover {
+  background-color: #A9927D;
 }
 
 #profile_pic {
   display: flex;
   text-align: center;
   margin: auto;
-  height: 180px;
+  height: 240px;
   width: auto;
   clip-path: circle(45%);
+  border-style: solid;
+  border-color: grey;
 }
 
 
