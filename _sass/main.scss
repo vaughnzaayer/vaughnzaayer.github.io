@@ -65,61 +65,37 @@ body {
   color: #FDFFFF;
 }
 
+/*
+
+*/
 .contact_card {
+  background-color: yellow;
+  height: 400px;
+
+}
+
+.contact_link_box {
+  background-color: purple;
   display: flex;
   flex-direction: column;
-  position: relative;
-  float: right;
-  right: 0;
-  list-style-type: none;
-  width: 256px;
-  height: auto;
-  padding: 8px;
-  margin: 8px;
-  background-color: #bfbfbf;
+  margin: 20px;
+}
+
+.contact_link {
+  color: white;
+  margin: 20px;
+  text-align: center;
 }
 
 #profile_pic {
-  border-radius: 10px;
-  width: auto;
-  height: inherit;
-  float: none;
-  border-style: solid;
-  border-width: 2px;
-  border-color: white;
-  padding: 0px;
-  margin: 0;
-}
-
-.contact_card li {
-  width: 100%;
-  height: auto;
-  position: relative;
-  background-color: #322A26;
-}
-
-.contact_card li a {
-  padding: 1px;
+  display: flex;
   text-align: center;
-  display: block;
-  text-decoration: none;
-  color: #677DB7;
-  width: 100%;
-  margin: 4px;
-}
-
-.contact_card li a:hover {
-  background-color: #DFDFDF;
-}
-
-.icon {
-  border-style: none;
-  border-width: 0;
+  margin: auto;
+  height: 180px;
   width: auto;
-  max-height: 20px;
-  float: left;
-  background-color: yellow;
+  clip-path: circle(45%);
 }
+
 
 #footer {
   position: fixed;

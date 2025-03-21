@@ -1,8 +1,8 @@
 <div class="contact_card">
-	<img src= "assets/images/profile_pic.jpeg" alt="A picture of me in the snow." id="profile_pic">
-		<li>
+	<img src= "assets/images/profile_pic_cropped.jpeg" alt="A picture of me in the snow." id="profile_pic">
+		<li class="contact_link_box">
 		{% for item in site.data.contact_links %}
-		<a href="{{ item.link  }}" target="_blank">
+		<a href="{{ item.link  }}" target="_blank" class="contact_link">
 			<!-- <img src="{{ item.icon }}" class="icon"> -->
 		{{ item.name }}
 		</a>
