@@ -1,8 +1,9 @@
 <ul class="vert_navbar">
 
 	{% for item in site.data.navigation %}
-		<li><a href=" {{ item.link  }}" {% if page.url == item.link %} class="active" {% endif %}>
+		<li {% if item.name == "About" %} class="dropdown_button" {% endif %}> <a href=" {{ item.link  }}" {% if page.url == item.link %} class="active" {% endif %}>
 		{{ item.name }}
 		</a></li>
 	{% endfor %}
+
 </ul>

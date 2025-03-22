@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Me
+contact_card: true
 ---
 ## A Little About Me
 

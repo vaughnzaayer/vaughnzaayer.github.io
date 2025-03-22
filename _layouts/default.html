@@ -12,9 +12,12 @@
 			<div class="home_main_content">
 				{{ content }}
 			</div>
+			{% if page.contact_card %}
+			
 			<div class="contact_space">
 				{% include contact_card.html %}
 			</div>
+			{% endif %}
 		</div>
 	</body>
 	{% include footer.html %}

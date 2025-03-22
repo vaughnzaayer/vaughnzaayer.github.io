@@ -5,18 +5,36 @@ title: Projects
 <h3>
 	Favorite Projects
 </h3>
-<li>
+<li class="project_list">
 	{% for project in site.projects %}
-		<a href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
 	{% endfor %}
 </li>
 
 <h3>
 	Active Projects
 </h3>
-<h3>
-	Contributions
-</h3>
+<li class="project_list">
+	{% for project in site.projects.active %}
+		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+	{% endfor %}
+</li>
+
 <h3>
 	Previous Projects
 </h3>
+<li class="project_list">
+	{% for project in site.projects.previous %}
+		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+	{% endfor %}
+
+</li>
+
+<h3>
+	Contributions
+</h3>
+<li class="project_list">
+	{% for project in site.projects.contributions %}
+		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+	{% endfor %}
+</li>

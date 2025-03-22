@@ -4,12 +4,14 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  color: #0A0908;
 }
 
 .main_content_body {
   display: flex;
   margin: 20px;
   padding-top: 60px;
+  font-family: "Helvetica";
 }
 
 .home_main_content {
@@ -40,12 +42,13 @@ body {
   background-color: #49111C;
 }
 
-.vert_navbar li {
+.vert_navbar li, .dropdown_button {
   margin: 8px;
   float: left;
   font-size: 25px;
   padding: 0;
 }
+
 
 .vert_navbar li a {
   display: block;
@@ -54,7 +57,7 @@ body {
   padding: 8px;
 }
 
-.vert_navbar li a:hover {
+.vert_navbar li a:hover, .dropdown_button:hover .dropdown {
   color: #d9d9d9;
 }
 
