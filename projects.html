@@ -2,27 +2,32 @@
 layout: default
 title: Projects
 ---
-<h3>
+<h2 style="text-align: center;">
 	Favorite Projects
-</h3>
+</h2>
+
 <li class="project_list">
 	{% for project in site.projects %}
-		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
+		<a class = "project_listing" href="{{ project.url }}">
+			<h3>{{ project.title }}</h3>
+			<p> Hello, World! </p>
+		</a>
 	{% endfor %}
 </li>
 
-<h3>
+
+<h2 style="text-align: center;">
 	Active Projects
-</h3>
+</h2>
 <li class="project_list">
 	{% for project in site.projects.active %}
 		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
 	{% endfor %}
 </li>
 
-<h3>
+<h2 style="text-align: center;">
 	Previous Projects
-</h3>
+</h2>
 <li class="project_list">
 	{% for project in site.projects.previous %}
 		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
@@ -30,9 +35,9 @@ title: Projects
 
 </li>
 
-<h3>
+<h2 style="text-align: center;">
 	Contributions
-</h3>
+</h2>
 <li class="project_list">
 	{% for project in site.projects.contributions %}
 		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>

@@ -1,8 +1,7 @@
 ---
 layout: post
 author: Vaughn
-title: Project 1
-category: favorite
+title: Jekyll Website
 ---
 
 Hello, World!

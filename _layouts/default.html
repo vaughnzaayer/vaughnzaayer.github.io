@@ -9,15 +9,21 @@
 	<body>
 		{% include navigation.html %}
 		<div class="main_content_body">
+			
+
 			<div class="home_main_content">
 				{{ content }}
 			</div>
-			{% if page.contact_card %}
 			
+			{% if page.contact_card %}
 			<div class="contact_space">
 				{% include contact_card.html %}
 			</div>
 			{% endif %}
+			
+			<!-- <div class="spacer">
+
+			</div> -->
 		</div>
 	</body>
 	{% include footer.html %}

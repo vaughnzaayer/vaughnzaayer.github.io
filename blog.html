@@ -5,7 +5,7 @@ title: Blog
 
 <h2 style="text-align: center;">Favorite Posts</h2>
 
-<ul>
+<!-- <ul> -->
 	{% for post in site.posts %}
 		{% if post.favorite %}
 		<li id="blog_post_links">
@@ -14,16 +14,16 @@ title: Blog
 		</li>
 		{% endif %}
 	{% endfor %}
-</ul>
+<!-- </ul> -->
 
 
 <h2 style="text-align: center;">Latest Posts</h2>
 
-<ul>
+<!-- <ul> -->
 	{% for post in site.posts %}
 		<li id="blog_post_links">
 			<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			{{ post.excerpt }}
 		</li>
 	{% endfor %}
-</ul>
+<!-- </ul> -->

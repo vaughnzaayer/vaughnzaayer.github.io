@@ -17,7 +17,8 @@ body {
 .home_main_content {
   z-index: 0;
   flex: 3;
-  margin-right: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .contact_space {
@@ -26,6 +27,12 @@ body {
   padding: 20px;
   border-radius: 8px;
 }
+
+/*.spacer {
+  z-index: 0;
+  flex: 0.5;
+  padding: 10px;
+}*/
 
 .vert_navbar {
   z-index: 1;
@@ -124,15 +131,42 @@ body {
 #blog_post_links {
   list-style-type: none;
   background-color: whitesmoke;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 #blog_post_links a {
-  text-decoration: none;
+  text-decoration: underline;
   padding: 4px;
   color: black;
+  background-color: inherit;
   text-align: center;
 }
 
 #blog_post_links a:hover {
   color: #BFBFBF;
+}
+
+
+.project_list {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+}
+
+.project_listing {
+  flex: 1;
+  text-decoration: none;
+  padding: 20px;
+  margin: 5px;
+  background-color: #5E503F;
+  color: #F2F4F3;
+  border-radius: 10px;
+/*  text-align: center;*/
+}
+
+.project_listing:hover {
+  background-color: #A9927D;
 }
