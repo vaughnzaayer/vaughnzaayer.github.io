@@ -3,4 +3,11 @@ layout: project_listing
 title: Projects
 ---
 
-<h2>Placeholder</h2>
+{% for project in site.projects %}
+	{% if project.type == "past" %}
+		<a class="project_listing" href="{{ project.url }}">
+			<h2>{{ project.title }}</h2>
+			<p>{{ project.excerpt }}</p>
+		</a>
+	{% endif %}
+{% endfor %}

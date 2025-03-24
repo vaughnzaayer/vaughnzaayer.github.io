@@ -30,7 +30,6 @@ body {
   flex: 3;
   margin-right: 30px;
   margin-left: 30px;
-  height: 2000px;
 }
 
 .contact_space {
@@ -170,6 +169,7 @@ body {
 #project_list {
   flex: 3;
   display: flex;
+  align-self: flex-start;
 }
 
 #project_categories {
