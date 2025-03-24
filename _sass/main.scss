@@ -23,7 +23,7 @@ body {
 
 .contact_space {
   z-index: 0;
-  flex: 1;
+  flex: 0.75;
   padding: 20px;
   border-radius: 8px;
 }
@@ -83,14 +83,15 @@ body {
   padding: 5px;
 }
 
-.contact_link_box {  display: flex;
+.contact_link_box {  
+  display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
 }
 
 .contact_link {
   color: #F2F4F3;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
   text-decoration: none;
   justify-content: space-between;
@@ -159,7 +160,8 @@ body {
 .project_listing {
   flex: 1;
   text-decoration: none;
-  padding: 20px;
+  padding: 5px;
+  padding-left: 20px;
   margin: 5px;
   background-color: #5E503F;
   color: #F2F4F3;

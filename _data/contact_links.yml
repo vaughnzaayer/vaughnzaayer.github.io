@@ -7,3 +7,6 @@
 - name: LinkedIn
   link: https://www.linkedin.com/in/vaughn-zaayer-ba0012211/
   icon: assets/icons/InBug-Black.png
+- name: BlueSky
+  link: https://bsky.app/profile/saltysmudge.bsky.social
+  icon: null
