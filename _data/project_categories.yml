@@ -1,0 +1,8 @@
+- name: Active Projects
+  link: /project_pages/active_projects.html
+- name: Favorite Projects
+  link: /project_pages/favorite_projects.html
+- name: Contributions
+  link: /project_pages/contributions.html
+- name: Past Projects
+  link: /project_pages/past_projects.html

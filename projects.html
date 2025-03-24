@@ -1,8 +1,29 @@
 ---
-layout: default
+layout: default_no_contact_space
 title: Projects
 ---
+
+
 <h2 style="text-align: center;">
+	Projects
+</h2>
+
+<div id="project_box">
+	<div id="project_list">
+		{% for project in site.projects %}
+			<a class = "project_listing" href="{{ project.url }}">
+				<h3>{{ project.title }}</h3>
+				<p> Hello, World! </p>
+			</a>
+		{% endfor %}
+	</div>
+
+	<div id="project_categories">
+		{% include project_type_selection.html %}
+	</div>
+</div>
+
+<!-- <h2 style="text-align: center;">
 	Favorite Projects
 </h2>
 
@@ -42,4 +63,4 @@ title: Projects
 	{% for project in site.projects.contributions %}
 		<a class = "project_listing" href="{{ project.url }}" style="color: black;">{{ project.title }}</a>
 	{% endfor %}
-</li>
+</li> -->

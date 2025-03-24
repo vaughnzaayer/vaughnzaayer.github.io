@@ -1,0 +1,13 @@
+---
+layout: project_listing
+title: Projects
+---
+
+{% for project in site.projects %}
+	{% if project.type == "active" %}
+		<a class="project_listing" href="{{ project.url }}">
+			<h2>{{ project.title }}</h2>
+			<p>{{ project.excerpt }}</p>
+		</a>
+	{% endif %}
+{% endfor %}

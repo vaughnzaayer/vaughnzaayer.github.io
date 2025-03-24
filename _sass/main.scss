@@ -6,6 +6,7 @@ $cc_link_color: #5E503F;
 $cc_link_color_hover: #A9927D;
 $project_listing_color: #5E503F;
 $project_listing_hover: #A9927D;
+$project_type_background_color: #F2F4F3;
 
 body {
   background-color: $background-color;
@@ -29,6 +30,7 @@ body {
   flex: 3;
   margin-right: 30px;
   margin-left: 30px;
+  height: 2000px;
 }
 
 .contact_space {
@@ -160,11 +162,41 @@ body {
 }
 
 
-.project_list {
+#project_box {
   display: flex;
-  list-style-type: none;
-  width: 100%;
+}
+
+
+#project_list {
+  flex: 3;
+  display: flex;
+}
+
+#project_categories {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: flex-start;
+  background-color: $project_type_background_color;
+  margin: 5px;
+  padding: 5px;
   height: auto;
+}
+
+.project_category {
+  z-index: 5;
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: black;
+  color: #F2F4F3;
+  border-radius: 10px;
+}
+
+.project_category:hover {
+  background-color: grey;
 }
 
 .project_listing {
@@ -181,4 +213,8 @@ body {
 
 .project_listing:hover {
   background-color: $project_listing_hover;
+}
+
+#selected_category {
+  background-color: $navbar_color;
 }

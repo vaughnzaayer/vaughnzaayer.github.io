@@ -1,0 +1,4 @@
+
+{% for type in site.data.project_categories %}
+	<a href="{{ type.link }}" {% if page.url == type.link %} id="selected_category" {% endif %} class="project_category"> {{ type.name }} </a>
+{% endfor %}
