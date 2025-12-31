@@ -7,7 +7,7 @@ title: Projects
 	{% if project.type == "active" %}
 		<a class="project_listing" href="{{ project.url }}">
 			<h2>{{ project.title }}</h2>
-			<p>{{ project.excerpt }}</p>
+			<p>{{ project.excerpt | strip_html }}</p>
 		</a>
 	{% endif %}
 {% endfor %}

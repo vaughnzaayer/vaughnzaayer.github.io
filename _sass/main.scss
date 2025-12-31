@@ -218,3 +218,19 @@ body {
 #selected_category {
   background-color: $navbar_color;
 }
+
+.post_listing {
+  flex: 1;
+  text-decoration: none;
+  padding: 5px;
+  padding-left: 20px;
+  margin: 5px;
+  background-color: $project_listing_color;
+  color: #F2F4F3;
+  border-radius: 10px;
+/*  text-align: center;*/
+}
+
+.post_listing:hover {
+  background-color: $project_listing_hover;
+}

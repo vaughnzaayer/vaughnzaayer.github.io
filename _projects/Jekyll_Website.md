@@ -3,12 +3,12 @@ layout: post
 author: Vaughn
 title: Jekyll Website
 type: active
-except-separator: <!---more--->
+excerpt_separator: <!--more-->
 ---
 
 My personal website is built using [Jekyll](https://jekyllrb.com), a Ruby framework for static sites and blogs. Jekyll adds a ton of new possibilities with the combination of page templates, Liquid, and Markdown. 
 
- <!---more--->
+<!--more-->
 
 ### So, why Jekyll?
 
