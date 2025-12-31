@@ -23,3 +23,35 @@ Here are the courses I've taken in computer science and mathematics:
 - Vector Calculus
 - Real Analysis
 - Combinatorics
+
+I enjoy cooking, sketching, and spending time with my dogs, Ben and Finnigan. Music is also a big part of my life -- I've played piano for 9 years and been a percussionist in a variety of ensembles from elementary school through college. 
+
+## Skills
+Below is a non-comprehensive list of my skills. 
+### Programming Languages
+- Python/Python3
+- C
+- C++
+- Rust
+- Swift
+- MIPS Assembly
+- R
+- Java
+- HTML/CSS
+- Javascript
+
+### Technical Skills
+- Postman 
+- Vim/NeoVim 
+- JetBrains Suite 
+- Git/GitHub 
+- Linux 
+- LATEX
+- gdb/lldb 
+- Google Suite
+- Microsoft Suite 
+- R Studio
+- API Design and Programming
+- Network Programming
+- Computer Graphics Programming
+- Algorithm Design, Analysis, and Optimization
