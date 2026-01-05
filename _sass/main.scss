@@ -1,5 +1,6 @@
 $background-color: #FFF;
 $default-text-color: #0A0908;
+$accent-color: #A9927D;
 $navbar_color: #49111C;
 $contact_card_background: #F2F4F3;
 $cc_link_color: #7A6852;
@@ -34,6 +35,20 @@ body {
   z-index: -50;
   display: flex;
   flex-direction: column;
+}
+
+a {
+  color: $navbar_color; 
+  text-decoration: underline; 
+}
+
+a:visited {
+  color: $navbar_color; 
+}
+
+a:hover {
+  color: $cc_link_color_hover; 
+  text-decoration: none;
 }
 
 .main_content_body {
@@ -131,6 +146,10 @@ body {
   background-color: $cc_link_color;
 }
 
+.contact_link:visited {
+  color: #F2F4F3;
+}
+
 .contact_link:hover {
   background-color: $cc_link_color_hover;
 }
@@ -172,6 +191,10 @@ body {
   color: black;
   background-color: inherit;
   text-align: center;
+}
+
+#blog_post_links a:visited {
+  color: black;
 }
 
 #blog_post_links a:hover {
@@ -231,6 +254,10 @@ body {
 
 .project_listing:hover {
   background-color: $project_listing_hover;
+}
+
+.project_listing a:visited {
+  color: white;
 }
 
 #selected_category {
