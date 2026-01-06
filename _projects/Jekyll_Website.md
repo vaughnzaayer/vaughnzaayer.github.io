@@ -3,6 +3,8 @@ layout: post
 author: Vaughn
 title: Jekyll Website
 type: active
+show_date: false
+github_link: https://github.com/vaughnzaayer/vaughnzaayer.github.io
 excerpt_separator: <!--more-->
 ---
 

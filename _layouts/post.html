@@ -5,12 +5,10 @@ layout: default
 
 {% if page.show_date %}
 	<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
-{% else %}
-	{% if page.github_link %}
-		<a href="{{ page.github_link }}"> Repository Link </a>
-	{% endif %}
 {% endif %}
 
-
+{% if page.github_link %}
+	<a href="{{ page.github_link }}" target="_blank"> Repository Link </a>
+{% endif %}
 
 {{ content }}
