@@ -2,6 +2,15 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+
+{% if page.show_date %}
+	<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+{% else %}
+	{% if page.github_link %}
+		<a href="{{ page.github_link }}"> Repository Link </a>
+	{% endif %}
+{% endif %}
+
+
 
 {{ content }}

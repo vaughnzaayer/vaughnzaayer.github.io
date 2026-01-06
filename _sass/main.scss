@@ -26,6 +26,7 @@ $project_type_background_color: #F2F4F3;
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: $background-color;
   padding: 0;
   margin: 0;
@@ -55,7 +56,7 @@ a:hover {
   display: flex;
   margin: 20px;
   padding-top: 60px;
-  font-family: "Helvetica";
+  font-family: "Roboto";
   flex: 1;
 }
 
@@ -126,6 +127,7 @@ a:hover {
   border-radius: 15px;
   height: auto;
   padding: 5px;
+  font-family: "Roboto";
 }
 
 .contact_link_box {  
@@ -240,6 +242,10 @@ a:hover {
   background-color: grey;
 }
 
+.project_category:visited {
+  color: #F2F4F3
+}
+
 .project_listing {
   flex: 1;
   text-decoration: none;
@@ -254,10 +260,12 @@ a:hover {
 
 .project_listing:hover {
   background-color: $project_listing_hover;
+  color: #F2F4F3;
+  text-decoration: none;
 }
 
-.project_listing a:visited {
-  color: white;
+.project_listing:visited {
+  color: #F2F4F3;
 }
 
 #selected_category {
