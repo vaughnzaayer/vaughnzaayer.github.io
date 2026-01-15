@@ -4,6 +4,7 @@ author: Vaughn Zaayer
 favorite: true
 excerpt_separator: <!--more-->
 show_date: true
+image: /assets/images/torus_curvature_regions.jpeg
 ---
 
 The curvature of a 3D surface is a crucial tool in many areas of applied mathematics, especially in physics. Modern computer graphics technology is built upon representing 3D objects as meshes, or piecewise-linear surfaces. This is because the straight edges of a mesh can be processed much faster by a GPU compared to differentiable (smooth) surfaces. For example, in the context of video games, a GPU could be rendering several million edges per frame with a target of 60 frames per second, making meshes a key optimization. On any smooth 3-dimensional surface, finding the curvature of any point on the surface is a pretty intuitive process of finding a normal vector, the corresponding normal planes, and measuring the 2-dimensional curvature of those normal sections. However, following the same process for a typical mesh leads to immediate roadblocks. Thankfully, measurements such as angle defect directly lead to the useful definition of discrete Gaussian curvature.
