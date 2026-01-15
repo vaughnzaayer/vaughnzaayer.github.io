@@ -24,13 +24,20 @@ For the uninitiated, I find it helpful to have a super quick rundown on the basi
 ### Finding the normal section
 Consider a differentiable surface $X$ in $\mathbb{R}^3$ (in 3-dimensional space) with a defined orientation. At any point $p$ on $X$, we can find a *unit normal vector* $\vec{n}(p)$ and a *unit tangent vector* $\vec{t}(p)$. These vectors $\vec{n}(p)$ and $\vec{t}(p)$ define a *normal plane*, which intersects $X$. That intersection is the *normal section*, a 2-dimensional curve which we'll denote as $\mathcal{N}$.
 
+<figure style="text-align: center; margin: 0;">
+  <img src="/assets/images/minimal_surface_curvature.png" width="600">
+  <figcaption style="font-style: italic; font-size: 0.9em; color: #666;">
+    By Eric Gaba (<a href="//commons.wikimedia.org/wiki/User:Sting" title="User:Sting">Sting</a>) - Based upon a drawing in a book, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1325452">Link</a>
+  </figcaption>
+</figure>
+
 ### Finding 2D curvature
 
 Now that we have a 2-dimensional curve, we can find the curvature of a particular normal section. Say this curve is defined by $\vec{r}(t)$, with $\vec{r}(t_0) = p$. 
 
 On a circle, the curvature of any point on the circle is inverse of the radius ($\kappa = \frac{1}{R}$), so we can define a tangent circle which only intersects the normal section at $p$. Several circles with different radii exist that have this property, however, so how do we know which circle correctly defines the curvature at $p$?
 
-A circle can be defined by any 3 non-colinear points $A$, $B$, and $C$. If we set $A = \vec{r}(t-\epsilon)$, $B = p = \vec{r}(t)$, and $C = \vec{r}(t+\delta)$ with $\epsilon,\delta > 0$, we can define a circle that intersects $\vec{r}(t)$. 
+A circle can be defined by any 3 non-collinear points $A$, $B$, and $C$. If we set $A = \vec{r}(t-\epsilon)$, $B = p = \vec{r}(t)$, and $C = \vec{r}(t+\delta)$ with $\epsilon,\delta > 0$, we can define a circle that intersects $\vec{r}(t)$. 
 
 <div style="text-align: center;">
 <video controls loop muted autoplay playsinline width="900">
@@ -56,9 +63,13 @@ $$
 
 The curvature of a surface at $p$ will look different based on if the Gaussian curvature is positive, negative, or zero. Positive Gaussian curvature means that $p$ is an *elliptic point*, and that the principal curvatures are the same sign. If Gaussian curvature is negative, then $p$ is a *saddle point* (or hyperbolic point) with the principal curvatures being different signs. As expected, zero Gaussian curvature means that $p$ is locally flat (developable), like a plane or a cylinder. The best way to demonstrate this is by looking at a torus.
 
-<div style="text-align: center;">
-<img src="/assets/images/torus_curvature_regions.jpeg" width="300">
-</div>
+<figure style="text-align: center; margin: 0;">
+  <img src="/assets/images/torus_curvature_regions.jpeg" width="300">
+  <figcaption style="font-style: italic; font-size: 0.9em; color: #666;">
+    By Hanne Kekkonen - Exploring Mathematics with Curvagon Tiles. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://www.researchgate.net/figure/A-torus-has-regions-with-positive-red-negative-blue-and-zero-curvature-purple_fig4_362409924">Link</a>
+  </figcaption>
+</figure>
+
 
 In the above figure, the "outside" of the torus has positive curvature, reflecting that any point in that region has principal curvatures of the same sign. On the "inside" there is negative curvature, once again showing that the principal curvatures at any point in that region have opposite signs.
 
