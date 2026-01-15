@@ -94,7 +94,7 @@ While there are several ways that we can define a *vertex normal* (i.e. a normal
 
 *Angle defect* is the amount the sum of angles fails to add up to $2\pi$, or a complete circle in radians. If you took a piece of paper, laid it flat on a table, and drew a few lines intersecting at the same point, the sum of the angles around that intersection point will add up to $2\pi$ radians. Now if you were to make a paper cone, make a single cut along the side of the cone to the tip, and smushed the cone flat on a surface, you would notice that there's a "slice" missing. That missing slice is the angular defect.
 
-Take our hexagonal pyramid. If we were to cut out each of the faces and lie them next to each other to make a "pie" shape, we would have a missing angle for our complete circle. Let $\beta_i$ be the $i$th interior angle of a face, and $n$ be the total number of faces on our surface (in this case $n=6$).
+Take our hexagonal pyramid. If we were to cut out each of the faces and lay them next to each other to make a "pie" shape, we would have a missing angle for our complete circle. Let $\beta_i$ be the $i$th interior angle of a face, and $n$ be the total number of faces on our surface (in this case $n=6$).
 
 <div style="text-align: center;">
 <video controls loop muted autoplay playsinline width="900">
