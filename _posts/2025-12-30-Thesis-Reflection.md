@@ -12,3 +12,9 @@ Placeholder
 
 
 Placeholder
+
+{% raw %}
+$$
+\text{set} = \left\{ x \in \mathbb{R} \mid x > 0 \right\}
+$$
+{% endraw %}
