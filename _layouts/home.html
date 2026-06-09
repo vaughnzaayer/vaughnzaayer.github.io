@@ -20,10 +20,3 @@ layout: archive
 
 {% include paginator.html locale=locale %}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[locale].featured_projects | default: "Featured Projects" }}</h3>
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html locale=locale entries=projects type=entries_layout %}
-</div>
-

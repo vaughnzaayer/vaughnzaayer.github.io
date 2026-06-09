@@ -1,6 +1,7 @@
 ---
 title: Reed Thesis - Mesh Simplification with the Gauss-Bonnet Theorem
 excerpt: "During my senior year at [Reed College](https://www.reed.edu), I researched, wrote, and defended a 40+ page Mathematics thesis, titled \"Keeping the Curves: Guiding Mesh Simplification with the Gauss-Bonnet Theorem.\""
+featured: true
 header:
   teaser: /assets/images/odb.jpg
   overlay_image: /assets/images/bunny_iters.png
