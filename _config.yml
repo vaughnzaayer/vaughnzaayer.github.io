@@ -21,7 +21,7 @@ title                    : "Vaughn Zaayer"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Vaughn Zaayer"
-description              : "An amazing website."
+description              : "The personal website and portfolio of Vaughn Zaayer."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -351,5 +351,6 @@ defaults:
       type: projects
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       share: true
+      classes: wide
