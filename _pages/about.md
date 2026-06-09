@@ -3,7 +3,6 @@ layout: single
 author_profile: true
 permalink: /about/
 ---
-## About Me
 
 I grew up in the East Bay Area before moving to Portland, Oregon to pursue my interests in computer science and mathematics at Reed College. At Reed I've made close connections with peers and faculty alike through my role at Computer Science and Technology Association at Reed (CSTAR), organizing outreach events to give every member of the CS department the chance to foster lifelong relationships. Reed's academic rigour strongly encouraged me to be resourceful and curious about the subjects I learn, and has given me vital tools to approach new challenges with confidence. One of my favorite experiences was working as a tutor and teacher's assistant in the CS department, since teaching students required creative thinking to break down complex topics.
 
