@@ -12,9 +12,11 @@ header:
       url: /assets/documents/ZaayerFinalThesis.pdf
 ---
 
-<!--more-->
 
-During my senior year at [Reed College](https://www.reed.edu), I researched, wrote, and defended a 40+ page Mathematics thesis, titled "Keeping the Curves: Guiding Mesh Simplification with the Gauss-Bonnet Theorem." During this process I was advised by [Professor Kyle Ormsby](https://kyleormsby.github.io).
+
+During my senior year at [Reed College](https://www.reed.edu), I researched, wrote, and defended a 40+ page Mathematics thesis, titled "Keeping the Curves: Guiding Mesh Simplification with the Gauss-Bonnet Theorem." Throughout this process I was advised by [Professor Kyle Ormsby](https://kyleormsby.github.io).
+
+<!--more-->
 
 ## Abstract
 Meshes representing 3-dimensional objects are used extensively in numerous areas of
