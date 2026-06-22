@@ -1,5 +1,6 @@
 ---
 title: Computing Vertex Gaussian Curvature on the GPU
+excerpt: A parallel algorithm to compute Gaussian curvature on the GPU.
 header:
   teaser: /assets/images/spot_curvature.png
   image: /assets/images/spot_curvature.png
