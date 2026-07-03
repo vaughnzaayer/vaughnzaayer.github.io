@@ -4,7 +4,13 @@ author_profile: true
 permalink: /about/
 ---
 
-I grew up in the East Bay Area before moving to Portland, Oregon to pursue my interests in computer science and mathematics at Reed College. At Reed I've made close connections with peers and faculty alike through my role at Computer Science and Technology Association at Reed (CSTAR), organizing outreach events to give every member of the CS department the chance to foster lifelong relationships. Reed's academic rigour strongly encouraged me to be resourceful and curious about the subjects I learn, and has given me vital tools to approach new challenges with confidence. One of my favorite experiences was working as a tutor and teacher's assistant in the CS department, since teaching students required creative thinking to break down complex topics.
+I grew up in the East Bay Area before moving to Portland, Oregon to pursue my interests in computer science and mathematics at Reed College. At Reed I've made close connections with peers and faculty alike through my role at Computer Science and Technology Association at Reed (CSTAR), organizing outreach events to give every member of the CS department the chance to foster lifelong relationships. 
+
+Reed's academic rigour strongly encouraged me to be resourceful and curious about the subjects I learn, and has given me vital tools to approach new challenges with confidence. One of my favorite experiences was working as a tutor and teacher's assistant in the CS department, since teaching students required creative thinking to break down complex topics.
+
+I specialize in writing and optimizing parallel algorithms, particularly on GPUs. Finding ways to tailor algorithms to best utilize its underlying hardware is typically a complex problem to solve, allowing me to experiment in the overlap between theoretical mathematics and practical computer science.
+
+I enjoy cooking, sketching, and spending time with my dogs, Ben, Daisy, and Finnigan. Music is also a big part of my life -- I've played piano for 9 years and been a percussionist in a variety of ensembles from elementary school through college.
 
 Here are the courses I've taken in computer science and mathematics:
 
@@ -26,15 +32,12 @@ Here are the courses I've taken in computer science and mathematics:
 - Combinatorics
 - Abstract Algebra
 
-I enjoy cooking, sketching, and spending time with my dogs, Ben and Finnigan. Music is also a big part of my life -- I've played piano for 9 years and been a percussionist in a variety of ensembles from elementary school through college. 
-
 ## Skills
-Below is a non-comprehensive list of my skills. 
 ### Programming Languages
-- Python/Python3
 - C
 - C++
 - Rust
+- Python/Python3
 - Swift
 - MIPS Assembly
 - R

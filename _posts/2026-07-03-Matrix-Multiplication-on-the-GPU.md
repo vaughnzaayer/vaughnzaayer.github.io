@@ -50,7 +50,7 @@ This programming model is supported by the [CUDA](https://docs.nvidia.com/cuda/c
 Because it's a completely separate device from the CPU, memory on the GPU needs to be explicitly allocated and data needs to be copied over to the allocated memory. This is done via the HIP API:
 
 ```cpp
-// create pointers to for arrays on the GPU
+// create pointers for arrays on the GPU
   float* A_GPU;
   float* B_GPU;
   float* C_GPU;
@@ -254,7 +254,7 @@ Developing parallel algorithms for the GPU requires more than simply dividing a 
 ## Naive Implementation Analysis
 Looking back at the [naive implementation](#naive-implementation) from before, we see that there is a noticeable falloff in throughput right after the $N = 2^{12}$ benchmark. 
 
-The RX 6800XT that this was tested on has 128 MiB in its local data share (LDS), or L3/Infinity Cache. At $N = 2^{11} = 2048$, each matrix takes up 16 MiB for a total of 48 MiB. The entire dataset fits inside of the cache as a result.
+The RX 6800XT that this was tested on has 128 MiB in its L3/Infinity Cache. At $N = 2^{11} = 2048$, each matrix takes up 16 MiB for a total of 48 MiB. The entire dataset fits inside of the cache as a result.
 
 At $N = 2^{12} = 4096$, however, the dataset balloons to 192 MiB, forcing the GPU to go off-chip to global memory. This introduces significant latency, crippling the number of FLOPs per transferred byte.
 
@@ -263,11 +263,11 @@ Another issue arises from each row of 4096 floats taking up 16 KiB in memory. Wh
 ## Optimized Implementation Analysis
 Using shared memory is a relatively simple addition that brings an enormous boost to throughput by reducing the number of transactions with global memory. Another benefit of tiling our matrix multiplication is reducing the number of *bank conflicts* by assigning each row and column a single wavefront.
 
-In my implementation, I set `BLOCK_DIM = 32` to match the wavefront size of 32 threads in the RDNA2 architecture. The LDS is also split into 32 *banks*, which allows the scheduler to perform memory transactions in large, singular bursts when the requested addresses are all in their own banks. When the 32 threads request data from `shared_B[i][threadIdx.x]`, each column is in its own bank, allowing for a single broadcast to load all data.
+In my implementation, I set `BLOCK_DIM = 32` to match the wavefront size of 32 threads in the RDNA2 architecture. The *local data share* (LDS) assigned to each block is also split into 32 *banks*, which allows the scheduler to perform memory transactions in large, singular bursts when the requested addresses are all in their own banks. When the 32 threads request data from `shared_B[i][threadIdx.x]`, each column is in its own bank, allowing for *coalesced global memory reads*.
 
 Another neat benefit is that all threads have the same `threadIdx.y`. When they request `shared_A[threadIdx.y][i]`, each thread is requesting the exact same data, which triggers a *hardware broadcast* that sends the same value to all threads in the wavefront. 
 
-Combined with the on-chip benefits of shared memory, avoiding banking conflicts allows our memory transactions to complete in a single cycle. Our total number of floating point operations per global memory transaction reflect this:
+Combined with the on-chip benefits of shared memory, avoiding banking conflicts allows our memory transactions to complete in a single cycle. Each tile loaded in from global memory is used `BLOCK_DIM` times, giving us a global memory footprint of $\mathcal{O}\frac{N^3}{\text{BLOCK_DIM}}$. Our new arithmetic intensity reflects this:
 
 $$
 \frac{2N \cdot \textrm{ BLOCK_DIM} \text{ FLOPS}}{8N \text{ Bytes Transferred}} = \frac{64}{8} = 8 \text{ FLOPS/Byte Transferred}
