@@ -1,7 +1,10 @@
 ---
 title:  "Demystifying Discrete Gaussian Curvature"
 date:   2026-01-07 18:37:42 -0700
+excerpt: "How to measure vertex curvature on a 3D mesh."
 categories: geometry_processing
+header:
+  teaser: /assets/images/angle_defect_teaser.jpeg
 ---
 
 The curvature of a 3D surface is a crucial tool in many areas of applied mathematics, especially in physics. Modern computer graphics technology is built upon representing 3D objects as meshes, or piecewise-linear surfaces. This is because the straight edges of a mesh can be processed much faster by a GPU compared to differentiable (smooth) surfaces. For example, in the context of video games, a GPU could be rendering several million edges per frame with a target of 60 frames per second, making meshes a key optimization. On any smooth 3-dimensional surface, finding the curvature of any point on the surface is a pretty intuitive process of finding a normal vector, the corresponding normal planes, and measuring the 2-dimensional curvature of those normal sections. However, following the same process for a typical mesh leads to immediate roadblocks. Thankfully, measurements such as angle defect directly lead to the useful definition of discrete Gaussian curvature.
@@ -62,7 +65,7 @@ $$
 The curvature of a surface at $p$ will look different based on if the Gaussian curvature is positive, negative, or zero. Positive Gaussian curvature means that $p$ is an *elliptic point*, and that the principal curvatures are the same sign. If Gaussian curvature is negative, then $p$ is a *saddle point* (or hyperbolic point) with the principal curvatures being different signs. As expected, zero Gaussian curvature means that $p$ is locally flat (developable), like a plane or a cylinder. The best way to demonstrate this is by looking at a torus.
 
 <figure style="text-align: center; margin: 0;">
-  <img src="/assets/images/torus_curvature_regions.jpeg" width="30">
+  <img src="/assets/images/torus_curvature_regions.jpeg" style="width: 50%; height: auto;">
   <figcaption style="font-style: italic; font-size: 0.9em; color: #666;">
     By Hanne Kekkonen - Exploring Mathematics with Curvagon Tiles. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://www.researchgate.net/figure/A-torus-has-regions-with-positive-red-negative-blue-and-zero-curvature-purple_fig4_362409924">Link</a>
   </figcaption>

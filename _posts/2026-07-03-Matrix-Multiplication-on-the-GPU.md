@@ -1,7 +1,10 @@
 ---
 title:  "Analysis of Efficient Matrix Multiplication on the GPU"
 date:   2026-07-03 10:30:00 -0700
+excerpt: An exploration and analysis of matrix multiplication kernels on the AMD RX 6800XT.
 categories: GPU_programming
+header:
+  teaser: /assets/images/rdna2_die.jpeg
 ---
 
 Matrix multiplication is one of the most commonly used operations in computer science. With the explosion of AI innovations especially, performant matrix multiplication is as critical as ever.
@@ -40,9 +43,9 @@ This means that the scaling of this algorithm is *terrible*. The following bench
 While we can't do much about the complexity of the algorithm, we can adapt to using a *parallel algorithm* on multiple threads for better performance at larger matrix sizes. Modern CPUs have multithreading (for example, the R5 5600x has 12 threads), but we can also leverage the thousands of parallel threads on a GPU.
 
 # Multi-Threaded Matrix Multiplication on the GPU
-CPUs typically excel at complex single tasks with branching paths, working on a single point of data at a time. GPUs are purpose-built for processing lots of data at the same time using a single instruction. This execution model is named "single instruction, multiple threads" (SIMT). Instructions are written as *kernels* which are compiled and sent to the GPU to run.
+CPUs typically excel at complex single tasks with branching paths, working on a single point of data at a time. GPUs are purpose-built for processing lots of data at the same time using a single instruction. This execution model is named "single instruction, multiple threads" (SIMT). Instructions are written as **kernels** which are compiled and sent to the GPU to run.
 
-GPU architecture organizes its thousands of worker threads into a hierarchy. Threads are grouped together into *thread blocks*, and all thread blocks are organized into a *grid*. Each thread block has a shared memory which can be accessed by its threads. All thread blocks can also access a large but relatively slow global memory. 
+GPU architecture organizes its thousands of worker threads into a hierarchy. Threads are grouped together into **thread blocks**, and all thread blocks are organized into a **grid**. Each thread block has a shared memory which can be accessed by its threads. All thread blocks can also access a large but relatively slow global memory. 
 
 This programming model is supported by the [CUDA](https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/introduction.html) and [HIP](https://rocm.docs.amd.com/projects/HIP/en/latest/what_is_hip.html) languages and APIs. CUDA is maintained by NVIDIA and only compiles to NVIDIA GPUs. HIP, on the other hand, is open-source and maintained by AMD, and also compiles to NVIDIA, AMD, and Intel GPUs. Since I have an AMD GPU, I will be using HIP.
 
@@ -96,7 +99,7 @@ const unsigned int row = blockIdx.y * blockDim.y + threadIdx.y;
 After checking that the thread's index falls within the bounds of `C`, we compute the dot product of `row` from `A` and `col` from `B`, then store that result in the corresponding place in `C`.
 
 ```cpp
-`if (row < M && col < K) {
+if (row < M && col < K) {
     for(int i = 0; i < N; i++) {
       sum += A[i + row * N] * B[i * K + col];
     }
@@ -104,9 +107,9 @@ After checking that the thread's index falls within the bounds of `C`, we comput
   }
 ```
 
-Calculating the efficiency of a parallel program is different from calculating time complexity with a single-threaded algorithm, since the effectiveness of a parallel program is dependent on how well it scales. To do this we use two metrics: *work* ($T_1$) and *span* ($T_\infty$).
+Calculating the efficiency of a parallel program is different from calculating time complexity with a single-threaded algorithm, since the effectiveness of a parallel program is dependent on how well it scales. To do this we use two metrics: **work** ($T_1$) and **span** ($T_\infty$).
 
-Work is equal to the time to run the full algorithm on a single processor. This is just the single-threaded time complexity from before, so $T_1 = \mathcal{O}(N^3)$. Span is the runtime of the process given the ideal number of processors. If we have a processor for each entry in `C`, then $T_\infty = \mathcal{O}(N)$. We can also calculate the *parallelism* of our GPU algorithm by finding the ratio of work to span:
+Work is equal to the time to run the full algorithm on a single processor. This is just the single-threaded time complexity from before, so $T_1 = \mathcal{O}(N^3)$. Span is the runtime of the process given the ideal number of processors. If we have a processor for each entry in `C`, then $T_\infty = \mathcal{O}(N)$. We can also calculate the **parallelism** of our GPU algorithm by finding the ratio of work to span:
 
 $$
   \frac{T_1}{T_\infty} = \frac{\mathcal{O}(N^3)}{\mathcal{O}(N)} = \mathcal{O}(N^2)
@@ -125,7 +128,7 @@ Using the same benchmark as before, we see the substantially more efficient the 
 
 Each thread performs $2N$ arithmetic operations ($N$ addition and $N$ multiplication operations), and $2N$ memory operations ($N$ reads from `A` and $N$ from `B`). For $N^2$ threads, that's $2N^3$ memory and arithmetic operations. Because there are only $2N^2$ elements in `A` and `B`, we're rereading way more than necessary.
 
-We can calculate the *arithmetic intensity* of the kernel by calculating the ratio of floating point operations (FLOPs) to the number of bytes transferred. As mentioned before, we have $2N$ arithmetic operations per thread. Since we're working with matrices of floats (which are typically 4 bytes) and reading from both `A` and `B`, we have a total of $8N$ bytes transferred from global memory. Thus, our arithmetic intensity becomes:
+We can calculate the **arithmetic intensity** of the kernel by calculating the ratio of floating point operations (FLOPs) to the number of bytes transferred. As mentioned before, we have $2N$ arithmetic operations per thread. Since we're working with matrices of floats (which are typically 4 bytes) and reading from both `A` and `B`, we have a total of $8N$ bytes transferred from global memory. Thus, our arithmetic intensity becomes:
 
 $$
 \frac{2N \text{ FLOPS}}{8N \text{ Bytes Transferred}} = 0.25 \text{ FLOPS/Byte Transferred}
@@ -263,9 +266,9 @@ Another issue arises from each row of 4096 floats taking up 16 KiB in memory. Wh
 ## Optimized Implementation Analysis
 Using shared memory is a relatively simple addition that brings an enormous boost to throughput by reducing the number of transactions with global memory. Another benefit of tiling our matrix multiplication is preventing *bank conflicts* by assigning each row and column a single wavefront.
 
-In my implementation, I set `BLOCK_DIM = 32` to match the wavefront size of 32 threads in the RDNA2 architecture. The *local data share* (LDS) assigned to each block is also split into 32 *banks*, which allows the scheduler to perform memory transactions in large, singular bursts when the requested addresses are all in their own banks. When the 32 threads request data from `shared_B[i][threadIdx.x]`, each column maps to a thread in the wavefront, which in turn correspond to unique banks, allowing for *coalesced global memory reads*. 
+In my implementation, I set `BLOCK_DIM = 32` to match the wavefront size of 32 threads in the RDNA2 architecture. The **local data share** (LDS) assigned to each block is also split into 32 **banks**, which allows the scheduler to perform memory transactions in large, singular bursts when the requested addresses are all in their own banks. When the 32 threads request data from `shared_B[i][threadIdx.x]`, each column maps to a thread in the wavefront, which in turn correspond to unique banks, allowing for **coalesced global memory reads**. 
 
-Another neat benefit is that all threads have the same `threadIdx.y`. When they request `shared_A[threadIdx.y][i]`, each thread is requesting the exact same data, which triggers a *hardware-level LDS broadcast* that sends the same value to all threads in the wavefront. 
+Another neat benefit is that all threads have the same `threadIdx.y`. When they request `shared_A[threadIdx.y][i]`, each thread is requesting the exact same data, which triggers a **hardware-level LDS broadcast** that sends the same value to all threads in the wavefront. 
 
 Combined with the on-chip benefits of shared memory, avoiding banking conflicts allows our memory transactions to complete in a single cycle. Each tile loaded in from global memory is used `BLOCK_DIM` times, giving us a global memory footprint of $\mathcal{O}\frac{N^3}{\text{BLOCK_DIM}}$. Our new arithmetic intensity reflects this:
 
