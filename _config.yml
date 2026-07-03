@@ -115,7 +115,7 @@ analytics:
 # Site Author
 author:
   name             : "Vaughn Zaayer"
-  avatar           : "assets/images/portrait.jpeg" 
+  avatar           : "assets/images/resized_new_portrait.jpeg" 
   bio              : "Recent Mathematics graduate with a minor in Computer Science from Reed College."
   location         : "San Francisco Bay Area"
   email            : 
@@ -339,6 +339,7 @@ defaults:
       comments: # true
       share: false
       related: false
+      classes: wide
 
   # _pages
   - scope:

@@ -1,5 +1,4 @@
 ---
-layout: single
 title:  "Demystifying Discrete Gaussian Curvature"
 date:   2026-01-07 18:37:42 -0700
 categories: geometry_processing
