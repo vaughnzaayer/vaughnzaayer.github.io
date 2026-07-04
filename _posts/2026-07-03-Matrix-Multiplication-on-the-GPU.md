@@ -270,7 +270,7 @@ In my implementation, I set `BLOCK_DIM = 32` to match the wavefront size of 32 t
 
 Another neat benefit is that all threads have the same `threadIdx.y`. When they request `shared_A[threadIdx.y][i]`, each thread is requesting the exact same data, which triggers a **hardware-level LDS broadcast** that sends the same value to all threads in the wavefront. 
 
-Combined with the on-chip benefits of shared memory, avoiding banking conflicts allows our memory transactions to complete in a single cycle. Each tile loaded in from global memory is used `BLOCK_DIM` times, giving us a global memory footprint of $\mathcal{O}\frac{N^3}{\text{BLOCK_DIM}}$. Our new arithmetic intensity reflects this:
+Combined with the on-chip benefits of shared memory, avoiding banking conflicts allows our memory transactions to complete in a single cycle. Each tile loaded in from global memory is used `BLOCK_DIM` times, giving us a global memory footprint of $\mathcal{O}(\frac{N^3}{\text{BLOCK_DIM}})$. Our new arithmetic intensity reflects this:
 
 $$
 \frac{2N \cdot \text{ BLOCK_DIM} \text{ FLOPS}}{8N \text{ Bytes Transferred}} = \frac{64}{8} = 8 \text{ FLOPS/Byte Transferred}
